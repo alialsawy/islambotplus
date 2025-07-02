@@ -1,0 +1,28 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "main.py",
+      "use": "@vercel/python"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "main.py"
+    }
+  ],
+  "env": {
+    "TELEGRAM_BOT_TOKEN": "@telegram_bot_token",
+    "TELEGRAM_CHANNEL_ID": "@telegram_channel_id",
+    "MAX_CONTENT_LENGTH": "500",
+    "CONTENT_TEMPERATURE": "0.8",
+    "RETRY_ATTEMPTS": "3",
+    "RETRY_DELAY": "60"
+  },
+  "functions": {
+    "main.py": {
+      "maxDuration": 60
+    }
+  }
+}
